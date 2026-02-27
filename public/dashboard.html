@@ -20,12 +20,12 @@
     .avatar-preview{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid #a78bfa;background:#302b63}
     .avatar-placeholder{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#818cf8);display:flex;align-items:center;justify-content:center;font-size:2.5rem;border:3px solid #a78bfa}
     label{display:block;font-size:.82rem;color:rgba(255,255,255,.65);margin-bottom:5px;font-weight:500}
-    input[type=text],input[type=url],input[type=password]{width:100%;padding:11px 14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;color:#fff;font-size:.95rem;margin-bottom:12px;outline:none;transition:border .2s}
+    input[type=text],input[type=url]{width:100%;padding:11px 14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;color:#fff;font-size:.95rem;margin-bottom:12px;outline:none;transition:border .2s}
     input:focus{border-color:#a78bfa}
     input::placeholder{color:rgba(255,255,255,.3)}
     .btn-save{padding:10px 24px;background:linear-gradient(135deg,#a78bfa,#818cf8);border:none;border-radius:10px;color:#fff;font-weight:600;cursor:pointer;font-size:.9rem;transition:all .2s}
     .btn-save:hover{opacity:.85}
-    .url-preview-box{background:rgba(0,0,0,.25);border:1px solid rgba(167,139,250,.3);border-radius:12px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:0}
+    .url-preview-box{background:rgba(0,0,0,.25);border:1px solid rgba(167,139,250,.3);border-radius:12px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
     .url-preview-text{font-size:.9rem;color:#a78bfa;word-break:break-all}
     .btn-copy{padding:6px 14px;background:rgba(167,139,250,.2);border:1px solid #a78bfa;border-radius:8px;color:#a78bfa;font-size:.8rem;cursor:pointer;white-space:nowrap;font-weight:600;transition:all .2s}
     .btn-copy:hover{background:#a78bfa;color:#fff}
@@ -40,10 +40,46 @@
     .add-link-row input{flex:1;min-width:120px;margin-bottom:0}
     .btn-add{padding:11px 20px;background:rgba(167,139,250,.2);border:1px solid #a78bfa;border-radius:10px;color:#a78bfa;font-weight:700;cursor:pointer;font-size:.9rem;white-space:nowrap;transition:all .2s}
     .btn-add:hover{background:#a78bfa;color:#fff}
-    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(30,30,60,.95);border:1px solid rgba(167,139,250,.4);border-radius:12px;padding:12px 24px;font-size:.9rem;color:#fff;z-index:999;display:none;backdrop-filter:blur(8px)}
+    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(30,30,60,.95);border:1px solid rgba(167,139,250,.4);border-radius:12px;padding:12px 24px;font-size:.9rem;color:#fff;z-index:999;display:none;backdrop-filter:blur(8px);white-space:nowrap}
     .btn-view{padding:10px 24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:10px;color:#fff;font-weight:600;cursor:pointer;font-size:.9rem;transition:all .2s;text-decoration:none;display:inline-block}
     .btn-view:hover{background:rgba(255,255,255,.12)}
     .save-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+
+    /* ===== THEME PICKER ===== */
+    .theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .theme-option{border-radius:14px;padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;border:2px solid transparent;transition:all .2s;position:relative}
+    .theme-option:hover{transform:translateY(-2px)}
+    .theme-option.active{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.2)}
+    .theme-dot{width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,.4)}
+    .theme-name{font-size:.78rem;font-weight:600;color:#fff;text-align:center}
+    .theme-check{position:absolute;top:6px;right:6px;width:18px;height:18px;background:#fff;border-radius:50%;display:none;align-items:center;justify-content:center}
+    .theme-option.active .theme-check{display:flex}
+    .theme-check svg{width:11px;height:11px}
+
+    /* Theme backgrounds */
+    .t-purple{background:linear-gradient(135deg,#0f0c29,#302b63)}
+    .t-ocean{background:linear-gradient(135deg,#0f2027,#203a43,#2c5364)}
+    .t-sunset{background:linear-gradient(135deg,#1a0533,#6b1a3a,#c0392b)}
+    .t-forest{background:linear-gradient(135deg,#0a1628,#0d3b2e,#145a32)}
+    .t-rose{background:linear-gradient(135deg,#1a0a1a,#3d0c2e,#6b1856)}
+    .t-midnight{background:linear-gradient(135deg,#000000,#0d0d0d,#1a1a2e)}
+
+    /* Theme accent dots */
+    .d-purple{background:#a78bfa}
+    .d-ocean{background:#38bdf8}
+    .d-sunset{background:#fb923c}
+    .d-forest{background:#4ade80}
+    .d-rose{background:#f472b6}
+    .d-midnight{background:#e2e8f0}
+
+    /* Theme preview bar */
+    .theme-preview-bar{height:4px;border-radius:4px;width:100%;margin-top:6px}
+    .p-purple{background:linear-gradient(90deg,#a78bfa,#818cf8)}
+    .p-ocean{background:linear-gradient(90deg,#38bdf8,#0ea5e9)}
+    .p-sunset{background:linear-gradient(90deg,#fb923c,#f43f5e)}
+    .p-forest{background:linear-gradient(90deg,#4ade80,#22c55e)}
+    .p-rose{background:linear-gradient(90deg,#f472b6,#ec4899)}
+    .p-midnight{background:linear-gradient(90deg,#94a3b8,#e2e8f0)}
   </style>
 </head>
 <body>
@@ -84,6 +120,71 @@
     </div>
   </div>
 
+  <!-- Theme Picker -->
+  <div class="section-card">
+    <div class="section-title">🎨 Pilih Tema Halaman Bio</div>
+    <div class="theme-grid">
+
+      <div class="theme-option t-purple active" data-theme="purple" onclick="selectTheme(this)">
+        <div class="theme-dot d-purple"></div>
+        <div class="theme-name">Purple Night</div>
+        <div class="theme-preview-bar p-purple"></div>
+        <div class="theme-check">
+          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#302b63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="theme-option t-ocean" data-theme="ocean" onclick="selectTheme(this)">
+        <div class="theme-dot d-ocean"></div>
+        <div class="theme-name">Ocean Blue</div>
+        <div class="theme-preview-bar p-ocean"></div>
+        <div class="theme-check">
+          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#203a43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="theme-option t-sunset" data-theme="sunset" onclick="selectTheme(this)">
+        <div class="theme-dot d-sunset"></div>
+        <div class="theme-name">Sunset Red</div>
+        <div class="theme-preview-bar p-sunset"></div>
+        <div class="theme-check">
+          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#6b1a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="theme-option t-forest" data-theme="forest" onclick="selectTheme(this)">
+        <div class="theme-dot d-forest"></div>
+        <div class="theme-name">Forest Green</div>
+        <div class="theme-preview-bar p-forest"></div>
+        <div class="theme-check">
+          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#0d3b2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="theme-option t-rose" data-theme="rose" onclick="selectTheme(this)">
+        <div class="theme-dot d-rose"></div>
+        <div class="theme-name">Rose Pink</div>
+        <div class="theme-preview-bar p-rose"></div>
+        <div class="theme-check">
+          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#3d0c2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="theme-option t-midnight" data-theme="midnight" onclick="selectTheme(this)">
+        <div class="theme-dot d-midnight"></div>
+        <div class="theme-name">Midnight Black</div>
+        <div class="theme-preview-bar p-midnight"></div>
+        <div class="theme-check">
+          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+    </div>
+    <div style="margin-top:16px">
+      <button class="btn-save" onclick="saveProfile()">💾 Simpan Tema</button>
+    </div>
+  </div>
+
   <!-- Links -->
   <div class="section-card">
     <div class="section-title">📋 Daftar Link</div>
@@ -107,9 +208,9 @@
 <script>
 const API = '';
 let TOKEN = localStorage.getItem('biojos_token');
-let currentUser = null;
+let currentTheme = 'purple';
 
-if (!TOKEN) window.location.href = '/login.html';
+if (!TOKEN) window.location.href = '/login';
 
 function showToast(msg, duration = 2500) {
   const t = document.getElementById('toast');
@@ -131,44 +232,56 @@ async function apiFetch(path, opts = {}) {
   return res;
 }
 
+function selectTheme(el) {
+  document.querySelectorAll('.theme-option').forEach(o => o.classList.remove('active'));
+  el.classList.add('active');
+  currentTheme = el.dataset.theme;
+}
+
+function setActiveTheme(themeName) {
+  currentTheme = themeName || 'purple';
+  document.querySelectorAll('.theme-option').forEach(o => {
+    o.classList.toggle('active', o.dataset.theme === currentTheme);
+  });
+}
+
 async function loadProfile() {
   const res = await apiFetch('/api/user');
   if (!res) return;
   const user = await res.json();
-  currentUser = user;
   document.getElementById('nav-username').textContent = '@' + user.username;
   document.getElementById('username').value = user.username || '';
   document.getElementById('display_name').value = user.display_name || '';
   document.getElementById('avatar_url').value = user.avatar_url || '';
   updateAvatarPreview(user.avatar_url, user.display_name || user.username);
   updateURLPreview(user.username);
+  setActiveTheme(user.theme || 'purple');
 }
 
 function updateAvatarPreview(url, name) {
   const el = document.getElementById('avatar-display');
+  const initial = (name || '?').charAt(0).toUpperCase();
   if (url) {
-    el.outerHTML = `<img src="${url}" class="avatar-preview" id="avatar-display" onerror="this.outerHTML='<div class=\\'avatar-placeholder\\' id=\\'avatar-display\\'>${(name||'?').charAt(0).toUpperCase()}</div>'"/>`;
+    el.outerHTML = `<img src="${url}" class="avatar-preview" id="avatar-display" onerror="this.outerHTML='<div class=\\'avatar-placeholder\\' id=\\'avatar-display\\'>${initial}</div>'"/>`;
   } else {
     el.className = 'avatar-placeholder';
-    el.textContent = (name || '?').charAt(0).toUpperCase();
+    el.textContent = initial;
   }
 }
 
 function updateURLPreview(username) {
-  const base = window.location.origin;
-  const url = username ? `${base}/${username}` : '-';
+  const url = username ? `${window.location.origin}/${username}` : '-';
   document.getElementById('url-preview').textContent = url;
   const viewBtn = document.getElementById('btn-view-profile');
-  if (username) { viewBtn.href = `/${username}`; viewBtn.style.opacity = '1'; }
-  else { viewBtn.href = '#'; viewBtn.style.opacity = '.4'; }
+  viewBtn.href = username ? `/${username}` : '#';
+  viewBtn.style.opacity = username ? '1' : '.4';
 }
 
-document.getElementById('avatar_url').addEventListener('input', function() {
-  const nameEl = document.getElementById('display_name');
-  updateAvatarPreview(this.value, nameEl.value);
+document.getElementById('avatar_url').addEventListener('input', function () {
+  updateAvatarPreview(this.value, document.getElementById('display_name').value);
 });
 
-document.getElementById('username').addEventListener('input', function() {
+document.getElementById('username').addEventListener('input', function () {
   updateURLPreview(this.value.trim());
 });
 
@@ -176,20 +289,22 @@ async function saveProfile() {
   const display_name = document.getElementById('display_name').value.trim();
   const avatar_url = document.getElementById('avatar_url').value.trim();
   const username = document.getElementById('username').value.trim();
+  const theme = currentTheme;
+
   if (!username) { showToast('⚠️ Username tidak boleh kosong'); return; }
+
   const res = await apiFetch('/api/user', {
     method: 'PUT',
-    body: JSON.stringify({ display_name, avatar_url, username })
+    body: JSON.stringify({ display_name, avatar_url, username, theme })
   });
+
   if (res && res.ok) {
-    showToast('✅ Profil berhasil disimpan!');
+    showToast('✅ Profil & tema berhasil disimpan!');
     updateAvatarPreview(avatar_url, display_name || username);
     updateURLPreview(username);
     document.getElementById('nav-username').textContent = '@' + username;
-    const stored = JSON.parse(localStorage.getItem('biojos_user') || '{}');
-    localStorage.setItem('biojos_user', JSON.stringify({...stored, username, display_name, avatar_url}));
   } else {
-    showToast('❌ Gagal menyimpan profil');
+    showToast('❌ Gagal menyimpan');
   }
 }
 
@@ -217,10 +332,12 @@ async function addLink() {
   const url = document.getElementById('new-url').value.trim();
   if (!title || !url) { showToast('⚠️ Judul dan URL wajib diisi'); return; }
   if (!url.startsWith('http')) { showToast('⚠️ URL harus diawali http:// atau https://'); return; }
+
   const res = await apiFetch('/api/links', {
     method: 'POST',
     body: JSON.stringify({ title, url })
   });
+
   if (res && res.ok) {
     document.getElementById('new-title').value = '';
     document.getElementById('new-url').value = '';
@@ -249,7 +366,7 @@ function copyURL() {
 function logout() {
   localStorage.removeItem('biojos_token');
   localStorage.removeItem('biojos_user');
-  window.location.href = '/login.html';
+  window.location.href = '/login';
 }
 
 loadProfile();
