@@ -1,0 +1,11 @@
+{
+  "name": "biojos",
+  "version": "1.0.0",
+  "description": "Link Bio App - Biojos",
+  "main": "index.js",
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
