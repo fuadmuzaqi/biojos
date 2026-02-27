@@ -109,7 +109,7 @@ const API = '';
 let TOKEN = localStorage.getItem('biojos_token');
 let currentUser = null;
 
-if (!TOKEN) window.location.href = '/login';
+if (!TOKEN) window.location.href = '/login.html';
 
 function showToast(msg, duration = 2500) {
   const t = document.getElementById('toast');
@@ -249,7 +249,7 @@ function copyURL() {
 function logout() {
   localStorage.removeItem('biojos_token');
   localStorage.removeItem('biojos_user');
-  window.location.href = '/login';
+  window.location.href = '/login.html';
 }
 
 loadProfile();
