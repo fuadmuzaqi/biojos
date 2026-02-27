@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Biojos — Link Bio untuk Semua</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',sans-serif;background:#0f0c29;color:#fff;min-height:100vh}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:rgba(255,255,255,.04);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.08)}
+    .logo{font-size:1.5rem;font-weight:800;background:linear-gradient(90deg,#a78bfa,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .nav-btns{display:flex;gap:10px}
+    .btn-outline{padding:8px 20px;border:2px solid #a78bfa;border-radius:10px;color:#a78bfa;text-decoration:none;font-weight:600;font-size:.9rem;transition:all .2s}
+    .btn-outline:hover{background:#a78bfa;color:#fff}
+    .btn-solid{padding:8px 20px;background:linear-gradient(135deg,#a78bfa,#818cf8);border-radius:10px;color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;border:none;transition:all .2s}
+    .btn-solid:hover{opacity:.85}
+    .hero{text-align:center;padding:80px 24px 60px;background:linear-gradient(135deg,#0f0c29,#302b63)}
+    .hero h1{font-size:clamp(2rem,6vw,3.5rem);font-weight:900;line-height:1.15;margin-bottom:18px}
+    .hero h1 span{background:linear-gradient(90deg,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p{font-size:1.1rem;color:rgba(255,255,255,.7);max-width:520px;margin:0 auto 32px;line-height:1.7}
+    .cta-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .cta-primary{padding:14px 32px;background:linear-gradient(135deg,#a78bfa,#818cf8);border-radius:14px;color:#fff;text-decoration:none;font-weight:700;font-size:1rem;transition:all .2s;box-shadow:0 4px 20px rgba(167,139,250,.4)}
+    .cta-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(167,139,250,.5)}
+    .cta-secondary{padding:14px 32px;border:2px solid rgba(255,255,255,.2);border-radius:14px;color:#fff;text-decoration:none;font-weight:700;font-size:1rem;transition:all .2s}
+    .cta-secondary:hover{border-color:#a78bfa;color:#a78bfa}
+    section{padding:70px 24px;max-width:900px;margin:0 auto}
+    .section-title{font-size:1.9rem;font-weight:800;margin-bottom:12px;text-align:center}
+    .section-sub{text-align:center;color:rgba(255,255,255,.6);margin-bottom:48px;font-size:1.05rem}
+    .about-text{color:rgba(255,255,255,.8);line-height:1.9;font-size:1.05rem;text-align:center;max-width:680px;margin:0 auto}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:0}
+    .feature-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:28px 24px;transition:all .2s}
+    .feature-card:hover{background:rgba(167,139,250,.1);border-color:#a78bfa;transform:translateY(-4px)}
+    .feature-icon{font-size:2.2rem;margin-bottom:14px}
+    .feature-card h3{font-size:1.1rem;margin-bottom:8px;font-weight:700}
+    .feature-card p{font-size:.9rem;color:rgba(255,255,255,.6);line-height:1.6}
+    .steps{display:flex;flex-direction:column;gap:20px;max-width:600px;margin:0 auto}
+    .step{display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px}
+    .step-num{width:40px;height:40px;min-width:40px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#818cf8);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem}
+    .step-content h4{font-weight:700;margin-bottom:6px;font-size:1rem}
+    .step-content p{color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.6}
+    footer{text-align:center;padding:30px;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.4);font-size:.85rem}
+    footer a{color:#a78bfa;text-decoration:none}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);max-width:900px;margin:0 auto}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">🔗 Biojos</div>
+  <div class="nav-btns">
+    <a href="/login" class="btn-outline">Login</a>
+    <a href="https://t.me/mas_puk" target="_blank" class="btn-solid">Register</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Satu Link untuk<br/><span>Semua Sosial Mediamu</span></h1>
+  <p>Biojos membantu kamu membuat halaman bio link yang profesional dan bisa dibagikan ke semua platform hanya dalam hitungan menit.</p>
+  <div class="cta-group">
+    <a href="https://t.me/mas_puk" target="_blank" class="cta-primary">🚀 Mulai Gratis Sekarang</a>
+    <a href="/login" class="cta-secondary">Login ke Akun</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- About -->
+<section id="about">
+  <div class="section-title">Tentang Biojos</div>
+  <div class="section-sub">Platform link bio sederhana, cepat, dan powerful</div>
+  <p class="about-text">
+    <strong>Biojos</strong> adalah platform link bio yang dirancang khusus untuk pengguna Indonesia. Dengan Biojos, kamu bisa mengumpulkan semua link penting — toko online, portofolio, media sosial, konten kreatif — dalam satu halaman yang elegan dan mudah dibagikan. Cukup bagikan satu URL <strong>biojos.vercel.app/usernamemu</strong> ke semua bio sosmed kamu!
+  </p>
+</section>
+
+<div class="divider"></div>
+
+<!-- Kenapa Biojos -->
+<section id="kenapa">
+  <div class="section-title">Kenapa Harus Biojos? 🤔</div>
+  <div class="section-sub">Fitur lengkap, gratis, dan mudah digunakan</div>
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Super Cepat</h3>
+      <p>Halaman bio kamu diload dengan sangat cepat, membuat pengunjung betah dan tidak kabur.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔗</div>
+      <h3>Link Unlimited</h3>
+      <p>Tambahkan berapa saja link yang kamu mau. Tidak ada batasan jumlah link di sini!</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <h3>Mobile Friendly</h3>
+      <p>Tampilan yang sempurna di semua perangkat, baik HP, tablet, maupun desktop.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎨</div>
+      <h3>Tampilan Keren</h3>
+      <p>Desain modern dan profesional yang bikin profil kamu terlihat lebih berkelas.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>Aman & Terpercaya</h3>
+      <p>Data kamu tersimpan aman dengan enkripsi password dan autentikasi JWT token.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🆓</div>
+      <h3>100% Gratis</h3>
+      <p>Nikmati semua fitur Biojos tanpa biaya apapun. Daftar sekarang dan langsung pakai!</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Cara Daftar -->
+<section id="cara-daftar">
+  <div class="section-title">Cara Daftar di Biojos 📋</div>
+  <div class="section-sub">Proses pendaftaran mudah hanya dalam beberapa langkah</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Hubungi Admin via Telegram</h4>
+        <p>Klik tombol <strong>Register</strong> di pojok kanan atas, kamu akan diarahkan ke Telegram admin kami <strong>@mas_puk</strong>. Kirim pesan untuk meminta akun baru Biojos kamu.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Dapatkan Username & Password</h4>
+        <p>Admin akan membuatkan akun untukmu dengan username pilihan kamu. Kamu akan menerima username dan password untuk login.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Login ke Dashboard</h4>
+        <p>Buka halaman <strong>Login</strong>, masukkan username dan password yang diberikan admin, lalu klik Login. Kamu langsung masuk ke dashboard!</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>Setup Profil & Tambah Link</h4>
+        <p>Upload foto avatar dengan memasukkan URL gambar, atur nama tampilan kamu, lalu mulai tambahkan link-link penting yang ingin kamu tampilkan.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h4>Bagikan Link Bio Kamu!</h4>
+        <p>Salin URL bio kamu yang unik, contoh: <strong>biojos.vercel.app/usernamemu</strong>, lalu paste di semua bio sosial media kamu. Selesai! 🎉</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 <a href="/">Biojos</a> — Dibuat dengan ❤️ untuk kreator Indonesia</p>
+</footer>
+
+</body>
+</html>
