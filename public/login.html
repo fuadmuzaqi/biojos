@@ -65,7 +65,7 @@
 
       localStorage.setItem('biojos_token', data.token);
       localStorage.setItem('biojos_user', JSON.stringify(data.user));
-      window.location.href = '/dashboard';
+      window.location.href = '/dashboard.html';
     } catch (err) {
       errorEl.textContent = err.message;
       errorEl.style.display = 'block';
@@ -76,7 +76,7 @@
 
   // Redirect jika sudah login
   if (localStorage.getItem('biojos_token')) {
-    window.location.href = '/dashboard';
+    window.location.href = '/dashboard.html';
   }
 </script>
 </body>
