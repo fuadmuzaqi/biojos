@@ -23,17 +23,17 @@ module.exports = async (req, res) => {
 
     if (req.method === "GET") {
       const result = await turso.execute({
-        sql: "SELECT id, username, display_name, avatar_url FROM users WHERE id = ?",
+        sql: "SELECT id, username, display_name, avatar_url, theme FROM users WHERE id = ?",
         args: [decoded.id],
       });
       return res.status(200).json(result.rows[0]);
     }
 
     if (req.method === "PUT") {
-      const { display_name, avatar_url, username } = req.body;
+      const { display_name, avatar_url, username, theme } = req.body;
       await turso.execute({
-        sql: "UPDATE users SET display_name = ?, avatar_url = ?, username = ? WHERE id = ?",
-        args: [display_name, avatar_url, username, decoded.id],
+        sql: "UPDATE users SET display_name = ?, avatar_url = ?, username = ?, theme = ? WHERE id = ?",
+        args: [display_name, avatar_url, username, theme || "purple", decoded.id],
       });
       return res.status(200).json({ success: true });
     }
