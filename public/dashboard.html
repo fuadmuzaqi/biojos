@@ -29,21 +29,67 @@
     .url-preview-text{font-size:.9rem;color:#a78bfa;word-break:break-all}
     .btn-copy{padding:6px 14px;background:rgba(167,139,250,.2);border:1px solid #a78bfa;border-radius:8px;color:#a78bfa;font-size:.8rem;cursor:pointer;white-space:nowrap;font-weight:600;transition:all .2s}
     .btn-copy:hover{background:#a78bfa;color:#fff}
-    .links-list{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
-    .link-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px}
+    .save-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+    .btn-view{padding:10px 24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:10px;color:#fff;font-weight:600;cursor:pointer;font-size:.9rem;transition:all .2s;text-decoration:none;display:inline-block}
+    .btn-view:hover{background:rgba(255,255,255,.12)}
+
+    /* ===== LINKS LIST ===== */
+    .links-list{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;min-height:20px}
+    .link-item{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:12px;
+      padding:12px 14px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      transition:all .2s;
+      cursor:default;
+    }
+    .link-item.sortable-ghost{
+      opacity:.35;
+      background:rgba(167,139,250,.15);
+      border:2px dashed #a78bfa;
+    }
+    .link-item.sortable-drag{
+      background:rgba(167,139,250,.2);
+      border-color:#a78bfa;
+      box-shadow:0 8px 32px rgba(167,139,250,.3);
+      transform:scale(1.02);
+    }
+    .drag-handle{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+      padding:4px 2px;
+      cursor:grab;
+      opacity:.4;
+      transition:opacity .2s;
+      flex-shrink:0;
+    }
+    .drag-handle:active{cursor:grabbing}
+    .drag-handle:hover{opacity:.9}
+    .drag-handle span{
+      display:block;
+      width:18px;
+      height:2px;
+      background:#fff;
+      border-radius:2px;
+    }
     .link-item-info{flex:1;min-width:0}
     .link-item-title{font-size:.9rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .link-item-url{font-size:.78rem;color:rgba(255,255,255,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .btn-del{padding:5px 10px;border:1px solid rgba(239,68,68,.3);border-radius:7px;color:#fca5a5;background:transparent;cursor:pointer;font-size:.8rem;transition:all .2s;flex-shrink:0}
+    .link-item-actions{display:flex;gap:6px;flex-shrink:0}
+    .btn-del{padding:5px 10px;border:1px solid rgba(239,68,68,.3);border-radius:7px;color:#fca5a5;background:transparent;cursor:pointer;font-size:.8rem;transition:all .2s}
     .btn-del:hover{background:rgba(239,68,68,.15)}
     .add-link-row{display:flex;gap:8px;flex-wrap:wrap}
     .add-link-row input{flex:1;min-width:120px;margin-bottom:0}
     .btn-add{padding:11px 20px;background:rgba(167,139,250,.2);border:1px solid #a78bfa;border-radius:10px;color:#a78bfa;font-weight:700;cursor:pointer;font-size:.9rem;white-space:nowrap;transition:all .2s}
     .btn-add:hover{background:#a78bfa;color:#fff}
+    .drag-hint{font-size:.78rem;color:rgba(255,255,255,.35);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+
+    /* ===== TOAST ===== */
     .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(30,30,60,.95);border:1px solid rgba(167,139,250,.4);border-radius:12px;padding:12px 24px;font-size:.9rem;color:#fff;z-index:999;display:none;backdrop-filter:blur(8px);white-space:nowrap}
-    .btn-view{padding:10px 24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:10px;color:#fff;font-weight:600;cursor:pointer;font-size:.9rem;transition:all .2s;text-decoration:none;display:inline-block}
-    .btn-view:hover{background:rgba(255,255,255,.12)}
-    .save-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
 
     /* ===== THEME PICKER ===== */
     .theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -54,26 +100,15 @@
     .theme-name{font-size:.78rem;font-weight:600;color:#fff;text-align:center}
     .theme-check{position:absolute;top:6px;right:6px;width:18px;height:18px;background:#fff;border-radius:50%;display:none;align-items:center;justify-content:center}
     .theme-option.active .theme-check{display:flex}
-    .theme-check svg{width:11px;height:11px}
-
-    /* Theme backgrounds */
+    .theme-preview-bar{height:4px;border-radius:4px;width:100%;margin-top:6px}
     .t-purple{background:linear-gradient(135deg,#0f0c29,#302b63)}
     .t-ocean{background:linear-gradient(135deg,#0f2027,#203a43,#2c5364)}
     .t-sunset{background:linear-gradient(135deg,#1a0533,#6b1a3a,#c0392b)}
     .t-forest{background:linear-gradient(135deg,#0a1628,#0d3b2e,#145a32)}
     .t-rose{background:linear-gradient(135deg,#1a0a1a,#3d0c2e,#6b1856)}
     .t-midnight{background:linear-gradient(135deg,#000000,#0d0d0d,#1a1a2e)}
-
-    /* Theme accent dots */
-    .d-purple{background:#a78bfa}
-    .d-ocean{background:#38bdf8}
-    .d-sunset{background:#fb923c}
-    .d-forest{background:#4ade80}
-    .d-rose{background:#f472b6}
-    .d-midnight{background:#e2e8f0}
-
-    /* Theme preview bar */
-    .theme-preview-bar{height:4px;border-radius:4px;width:100%;margin-top:6px}
+    .d-purple{background:#a78bfa}.d-ocean{background:#38bdf8}.d-sunset{background:#fb923c}
+    .d-forest{background:#4ade80}.d-rose{background:#f472b6}.d-midnight{background:#e2e8f0}
     .p-purple{background:linear-gradient(90deg,#a78bfa,#818cf8)}
     .p-ocean{background:linear-gradient(90deg,#38bdf8,#0ea5e9)}
     .p-sunset{background:linear-gradient(90deg,#fb923c,#f43f5e)}
@@ -83,6 +118,10 @@
   </style>
 </head>
 <body>
+
+<!-- SortableJS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+
 <nav>
   <div class="logo">🔗 Biojos</div>
   <div class="nav-right">
@@ -103,7 +142,7 @@
     <input type="url" id="avatar_url" placeholder="https://i.imgur.com/foto.jpg"/>
     <label>Username (URL Bio)</label>
     <input type="text" id="username" placeholder="username"/>
-    <label>Nama Link Bio (Ditampilkan di halaman)</label>
+    <label>Nama Link Bio</label>
     <input type="text" id="display_name" placeholder="Nama kamu"/>
     <div class="save-row">
       <button class="btn-save" onclick="saveProfile()">Simpan Profil</button>
@@ -124,61 +163,42 @@
   <div class="section-card">
     <div class="section-title">🎨 Pilih Tema Halaman Bio</div>
     <div class="theme-grid">
-
       <div class="theme-option t-purple active" data-theme="purple" onclick="selectTheme(this)">
         <div class="theme-dot d-purple"></div>
         <div class="theme-name">Purple Night</div>
         <div class="theme-preview-bar p-purple"></div>
-        <div class="theme-check">
-          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#302b63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="theme-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#302b63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
-
       <div class="theme-option t-ocean" data-theme="ocean" onclick="selectTheme(this)">
         <div class="theme-dot d-ocean"></div>
         <div class="theme-name">Ocean Blue</div>
         <div class="theme-preview-bar p-ocean"></div>
-        <div class="theme-check">
-          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#203a43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="theme-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#203a43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
-
       <div class="theme-option t-sunset" data-theme="sunset" onclick="selectTheme(this)">
         <div class="theme-dot d-sunset"></div>
         <div class="theme-name">Sunset Red</div>
         <div class="theme-preview-bar p-sunset"></div>
-        <div class="theme-check">
-          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#6b1a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="theme-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#6b1a3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
-
       <div class="theme-option t-forest" data-theme="forest" onclick="selectTheme(this)">
         <div class="theme-dot d-forest"></div>
         <div class="theme-name">Forest Green</div>
         <div class="theme-preview-bar p-forest"></div>
-        <div class="theme-check">
-          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#0d3b2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="theme-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#0d3b2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
-
       <div class="theme-option t-rose" data-theme="rose" onclick="selectTheme(this)">
         <div class="theme-dot d-rose"></div>
         <div class="theme-name">Rose Pink</div>
         <div class="theme-preview-bar p-rose"></div>
-        <div class="theme-check">
-          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#3d0c2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="theme-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#3d0c2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
-
       <div class="theme-option t-midnight" data-theme="midnight" onclick="selectTheme(this)">
         <div class="theme-dot d-midnight"></div>
         <div class="theme-name">Midnight Black</div>
         <div class="theme-preview-bar p-midnight"></div>
-        <div class="theme-check">
-          <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="theme-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
-
     </div>
     <div style="margin-top:16px">
       <button class="btn-save" onclick="saveProfile()">💾 Simpan Tema</button>
@@ -188,6 +208,12 @@
   <!-- Links -->
   <div class="section-card">
     <div class="section-title">📋 Daftar Link</div>
+    <div class="drag-hint">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      Tahan & seret ikon ≡ untuk mengubah urutan link
+    </div>
     <div class="links-list" id="links-list">
       <p style="color:rgba(255,255,255,.4);font-size:.9rem;text-align:center">Memuat link...</p>
     </div>
@@ -209,6 +235,8 @@
 const API = '';
 let TOKEN = localStorage.getItem('biojos_token');
 let currentTheme = 'purple';
+let sortableInstance = null;
+let isSavingOrder = false;
 
 if (!TOKEN) window.location.href = '/login.html';
 
@@ -232,6 +260,7 @@ async function apiFetch(path, opts = {}) {
   return res;
 }
 
+// ===== THEME =====
 function selectTheme(el) {
   document.querySelectorAll('.theme-option').forEach(o => o.classList.remove('active'));
   el.classList.add('active');
@@ -245,6 +274,7 @@ function setActiveTheme(themeName) {
   });
 }
 
+// ===== PROFIL =====
 async function loadProfile() {
   const res = await apiFetch('/api/user');
   if (!res) return;
@@ -262,7 +292,8 @@ function updateAvatarPreview(url, name) {
   const el = document.getElementById('avatar-display');
   const initial = (name || '?').charAt(0).toUpperCase();
   if (url) {
-    el.outerHTML = `<img src="${url}" class="avatar-preview" id="avatar-display" onerror="this.outerHTML='<div class=\\'avatar-placeholder\\' id=\\'avatar-display\\'>${initial}</div>'"/>`;
+    el.outerHTML = `<img src="${url}" class="avatar-preview" id="avatar-display"
+      onerror="this.outerHTML='<div class=\\'avatar-placeholder\\' id=\\'avatar-display\\'>${initial}</div>'"/>`;
   } else {
     el.className = 'avatar-placeholder';
     el.textContent = initial;
@@ -287,17 +318,14 @@ document.getElementById('username').addEventListener('input', function () {
 
 async function saveProfile() {
   const display_name = document.getElementById('display_name').value.trim();
-  const avatar_url = document.getElementById('avatar_url').value.trim();
-  const username = document.getElementById('username').value.trim();
-  const theme = currentTheme;
-
+  const avatar_url   = document.getElementById('avatar_url').value.trim();
+  const username     = document.getElementById('username').value.trim();
+  const theme        = currentTheme;
   if (!username) { showToast('⚠️ Username tidak boleh kosong'); return; }
-
   const res = await apiFetch('/api/user', {
     method: 'PUT',
     body: JSON.stringify({ display_name, avatar_url, username, theme })
   });
-
   if (res && res.ok) {
     showToast('✅ Profil & tema berhasil disimpan!');
     updateAvatarPreview(avatar_url, display_name || username);
@@ -308,36 +336,91 @@ async function saveProfile() {
   }
 }
 
+// ===== LINKS =====
 async function loadLinks() {
   const res = await apiFetch('/api/links');
   if (!res) return;
   const links = await res.json();
+  renderLinks(links);
+}
+
+function renderLinks(links) {
   const list = document.getElementById('links-list');
+
+  // Hancurkan instance sortable lama jika ada
+  if (sortableInstance) {
+    sortableInstance.destroy();
+    sortableInstance = null;
+  }
+
   if (!links.length) {
     list.innerHTML = '<p style="color:rgba(255,255,255,.4);font-size:.9rem;text-align:center">Belum ada link. Tambahkan link pertamamu! 🔗</p>';
     return;
   }
+
   list.innerHTML = links.map(l => `
     <div class="link-item" data-id="${l.id}">
-      <div class="link-item-info">
-        <div class="link-item-title">${l.title}</div>
-        <div class="link-item-url">${l.url}</div>
+      <div class="drag-handle" title="Seret untuk mengubah urutan">
+        <span></span><span></span><span></span>
       </div>
-      <button class="btn-del" onclick="deleteLink(${l.id})">Hapus</button>
+      <div class="link-item-info">
+        <div class="link-item-title">${escapeHtml(l.title)}</div>
+        <div class="link-item-url">${escapeHtml(l.url)}</div>
+      </div>
+      <div class="link-item-actions">
+        <button class="btn-del" onclick="deleteLink(${l.id})">Hapus</button>
+      </div>
     </div>`).join('');
+
+  // Init SortableJS
+  sortableInstance = new Sortable(list, {
+    animation: 180,
+    easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+    handle: '.drag-handle',
+    ghostClass: 'sortable-ghost',
+    dragClass: 'sortable-drag',
+    onEnd: async function () {
+      if (isSavingOrder) return;
+      isSavingOrder = true;
+
+      // Ambil urutan id terbaru dari DOM
+      const items = list.querySelectorAll('.link-item');
+      const ordered_ids = Array.from(items).map(el => parseInt(el.dataset.id));
+
+      showToast('💾 Menyimpan urutan...');
+      const res = await apiFetch('/api/links', {
+        method: 'PATCH',
+        body: JSON.stringify({ ordered_ids })
+      });
+
+      if (res && res.ok) {
+        showToast('✅ Urutan berhasil disimpan!');
+      } else {
+        showToast('❌ Gagal menyimpan urutan');
+        loadLinks(); // reload jika gagal
+      }
+      isSavingOrder = false;
+    }
+  });
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
 
 async function addLink() {
   const title = document.getElementById('new-title').value.trim();
-  const url = document.getElementById('new-url').value.trim();
+  const url   = document.getElementById('new-url').value.trim();
   if (!title || !url) { showToast('⚠️ Judul dan URL wajib diisi'); return; }
-  if (!url.startsWith('http')) { showToast('⚠️ URL harus diawali http:// atau https://'); return; }
-
+  if (!url.startsWith('http')) { showToast('⚠️ URL harus diawali https://'); return; }
   const res = await apiFetch('/api/links', {
     method: 'POST',
     body: JSON.stringify({ title, url })
   });
-
   if (res && res.ok) {
     document.getElementById('new-title').value = '';
     document.getElementById('new-url').value = '';
