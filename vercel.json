@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/login", "dest": "/public/login.html" },
+    { "src": "/dashboard", "dest": "/public/dashboard.html" },
+    { "src": "/([a-zA-Z0-9_-]+)", "dest": "/api/profile?username=$1" },
+    { "src": "/", "dest": "/public/index.html" }
+  ]
+}
